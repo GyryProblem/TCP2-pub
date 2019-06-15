@@ -31,11 +31,11 @@ namespace TCP2
 
         private void Increase() //Заполнение до 8 разрядов 
         {
-            while (RgABox.Text.Length < 8)
+            while (RgABox.Text.Length < 16)
             {
                 RgABox.Text = '0' + RgABox.Text;
             }
-            while (RgBBox.Text.Length < 8)
+            while (RgBBox.Text.Length < 16)
             {
                 RgBBox.Text = '0' + RgBBox.Text;
             }
@@ -118,7 +118,7 @@ namespace TCP2
             }
             InfoBox.Text = InfoBox.Text + "\r\n" + "\r\n";
             //Концовка модифицированного кода
-            int[] check = new int[9] { 1, 1, 0, 0, 0, 0, 0, 0, 0 };
+            int[] check = new int[17] { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             if ((Calculations.rg_a[0] == 1)&&(!Equals(Calculations.rg_a, check)))
             {
                 Calculations.Inverse(Calculations.rg_a);
@@ -130,7 +130,7 @@ namespace TCP2
             Plus();
             if (!Calculations.not_right)
             {
-                for (int i = 1; i < 9; i++)
+                for (int i = 1; i < 17; i++)
                 {
                     RgCBox.Text = RgCBox.Text + Convert.ToString(Calculations.rg_c[i]);
                     if (i == 1)
@@ -147,14 +147,14 @@ namespace TCP2
 
         public void Plus()
         {
-            Calculations.rg_c = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+            Calculations.rg_c = new int[17] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             Calculations.not_right = false;
-            int ct = 8;
+            int ct = 16;
             Calculations.tg_p = 0;
             Calculations.step = 1;
             do
             {
-                int summ = 1;
+                int summ = 3;
                 if (ct != 0)
                 {
                     InfoBox.Text = InfoBox.Text + "Вычисление от " + ct + " до " + (ct - 3) + "\r\n";
@@ -164,7 +164,7 @@ namespace TCP2
                     InfoBox.Text = InfoBox.Text + "Step: " + Calculations.step + "\r\n";
                     InfoBox.Text = InfoBox.Text + "TgP: " + Calculations.tg_p + "\r\n";
                     InfoBox.Text = InfoBox.Text + "RgC: ";
-                    for (int i = 0; i < 9; i++)
+                    for (int i = 0; i < 17; i++)
                     {
                         InfoBox.Text = InfoBox.Text + Calculations.rg_c[i];
                         if (i == 1)
@@ -191,7 +191,7 @@ namespace TCP2
             InfoBox.Text = InfoBox.Text + "Step: " + Calculations.step + "\r\n";
             InfoBox.Text = InfoBox.Text + "TgP: " + Calculations.tg_p + "\r\n";
             InfoBox.Text = InfoBox.Text + "RgC: ";
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < 17; i++)
             {
                 InfoBox.Text = InfoBox.Text + Calculations.rg_c[i];
                 if (i == 1)
@@ -207,7 +207,7 @@ namespace TCP2
             {
                 if (Calculations.tg_p == 1)
                 {
-                    int col = 8;
+                    int col = 16;
                     bool increase = true;
                     while (increase)
                     {
@@ -296,7 +296,7 @@ namespace TCP2
             }
             InfoBox.Text = InfoBox.Text + "\r\n" + "\r\n";
             //Концовка модифицированного кода
-            int[] check = new int[9] { 1, 1, 0, 0, 0, 0, 0, 0, 0 };
+            int[] check = new int[17] { 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
             if ((Calculations.rg_a[0] == 1) && (!Equals(Calculations.rg_a, check)))
             {
                 Calculations.Inverse(Calculations.rg_a);
@@ -318,7 +318,7 @@ namespace TCP2
             Plus();
             if (!Calculations.not_right)
             {
-                for (int i = 1; i < 9; i++)
+                for (int i = 1; i < 17; i++)
                 {
                     RgCBox.Text = RgCBox.Text + Convert.ToString(Calculations.rg_c[i]);
                     if (i == 1)
@@ -329,7 +329,7 @@ namespace TCP2
             }
             else
             {
-                InfoBox.Text = InfoBox.Text + "Возникло переполнение!";
+                InfoBox.Text = InfoBox.Text + "\r\n" + "Возникло переполнение!";
             }
         }
     }

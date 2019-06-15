@@ -22,10 +22,10 @@ namespace TCP2
     
     public class Calculations
     {
-        public static int[] rg_a = new int[9];
-        public static int[] rg_b = new int[9];
+        public static int[] rg_a = new int[17];
+        public static int[] rg_b = new int[17];
         public static bool count = false;
-        public static int[] rg_c = new int[9];
+        public static int[] rg_c = new int[17];
         public static bool not_right = false;
         public static int step;
         public static int tg_p;
